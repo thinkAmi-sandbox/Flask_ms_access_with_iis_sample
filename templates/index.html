@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Index</title>
+  <link rel="stylesheet" href="{{ url_for("static", filename="style.css") }}"/>
+</head>
+<body>
+    <h1>sample</h1>
+    <form action="" method="post" role="form" class="form-inline">
+        <label for="name">Name?</label><br>
+        <input type="text" class="form-control" name="item_name" id="name" placeholder="foo">
+        <input type="submit" value="検索">
+    </form>
+
+    {% if message is not none %}
+        <h3>{{ message }}</h3>    
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+            <tr>
+                <td>{{ item_id }}</td>
+                <td>{{ item_name }}</td>
+            </tr>
+        </table>
+    {% endif %}
+</body>
+</html>
